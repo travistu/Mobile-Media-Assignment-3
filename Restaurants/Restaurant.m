@@ -7,12 +7,13 @@
 
 
 @implementation Restaurant
-@synthesize address, name, cuisineType, yearOpened;
+@synthesize address, name, cuisineType, reviewerName, text, yearOpened, score, numberOfHelpfulRatings, numberOfUnhelpfulRatings;
 
 
 -(int)age
 {
     return 2012 - yearOpened;
+    
 }
 
 @end
