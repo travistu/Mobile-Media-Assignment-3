@@ -6,10 +6,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Restaurant.h"
+#import "Review.h"
 
 @interface DetailViewController : UIViewController
 {
     Restaurant* restaurant;
+    Review* review;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
