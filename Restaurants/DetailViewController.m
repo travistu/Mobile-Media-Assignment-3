@@ -30,7 +30,7 @@
     restaurant.address = @"746 First Avenue\nNew York, NY 10128";
     restaurant.cuisineType = @"Peruvian";
     restaurant.yearOpened = 1995;
-
+    
     Review* review1 = [[Review alloc] init];
     review1.text = @"What fab-u-lass chicken! We could eat it all day if we didn't have to stop to drink sangria!";
     review1.reviewer = @"The Addams";
@@ -59,10 +59,12 @@
     review4.numberOfHelpfulReviews = 14;
     review4.numberOfUnhelpfulReviews = 5;
     
+    
+    restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
+    
 
-    
-    
-    
+    helpfulReviewLabel.text = [NSString stringWithFormat:@" %@-%@ ",review1.text, review1.reviewer];
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@" %i of %i found this review helpful ", review1.numberOfHelpfulReviews, review1.numberOfHelpfulReviews + review1.numberOfUnhelpfulReviews];
     addressLabel.text = [restaurant address];
     navigationHeader.title = [restaurant name];
     cuisineLabel.text = [restaurant cuisineType];

@@ -7,7 +7,7 @@
 
 
 @implementation Restaurant
-@synthesize address, name, cuisineType, reviewerName, text, yearOpened, score, numberOfHelpfulRatings, numberOfUnhelpfulRatings;
+@synthesize address, name, cuisineType, reviewerName, text, reviews, yearOpened, score, numberOfHelpfulRatings, numberOfUnhelpfulRatings;
 
 
 -(int)age
