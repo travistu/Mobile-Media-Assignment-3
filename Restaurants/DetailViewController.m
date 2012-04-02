@@ -62,9 +62,36 @@
     
     restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
     
+    
 
     helpfulReviewLabel.text = [NSString stringWithFormat:@" %@-%@ ",review1.text, review1.reviewer];
     helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@" %i of %i found this review helpful ", review1.numberOfHelpfulReviews, review1.numberOfHelpfulReviews + review1.numberOfUnhelpfulReviews];
+    
+    
+    
+    NSArray* reviews = [restaurant reviews];
+    for (Review* review in [restaurant reviews]) {
+        NSLog(@"Review Text: %@", review.text);
+    }
+    
+    if (review.score > 4)
+    {
+        NSLog(@"This is a great review");
+    }
+    else if (review.score > 2)
+    {
+        NSLog(@"This is a mediocre review");
+    }
+    else
+    {
+        NSLog(@"This is a terrible review");
+    }
+    
+    
+    
+    helpfulReviewLabel.text = [[restaurant mostHelpfulReview] text];
+    
+    
     addressLabel.text = [restaurant address];
     navigationHeader.title = [restaurant name];
     cuisineLabel.text = [restaurant cuisineType];

@@ -15,22 +15,21 @@
     
 }
 
--(Review*)mostHelpfulReview
+-(Review*) mostHelpfulReview
 {
-    Review* mostHelpful = nil; 
-    for (Review* review in reviews)
-    {
-        if (review.numberOfHelpfulReviews > 5)
-            { 
+    Review* mostHelpful = nil;
+    for (Review* review in reviews) {
+        if (review.numberOfHelpfulReviews >5) {
             if (review.helpfulPercentage > mostHelpful.helpfulPercentage)
-                {
-                    mostHelpful= review;
-                } 
+            {
+                mostHelpful = review;
             }
+        }
     }
+    return mostHelpful;
     
-    return;
 }
+
 
 
 
