@@ -24,12 +24,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    restaurant = [[Restaurant alloc] init];
+    currentRestaurant = [[Restaurant alloc] init];
     
-    restaurant.name = @"Pio Pio";
-    restaurant.address = @"746 First Avenue\nNew York, NY 10128";
-    restaurant.cuisineType = @"Peruvian";
-    restaurant.yearOpened = 1995;
+    currentRestaurant.name = @"Pio Pio";
+    currentRestaurant.address = @"746 First Avenue\nNew York, NY 10128";
+    currentRestaurant.cuisineType = @"Peruvian";
+    currentRestaurant.yearOpened = 1995;
     
     Review* review1 = [[Review alloc] init];
     review1.text = @"What fab-u-lass chicken! We could eat it all day if we didn't have to stop to drink sangria!";
@@ -60,7 +60,7 @@
     review4.numberOfUnhelpfulReviews = 5;
     
     
-    restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
+    currentRestaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
     
     
 
@@ -69,8 +69,8 @@
     
     
     
-    NSArray* reviews = [restaurant reviews];
-    for (Review* review in [restaurant reviews]) {
+    NSArray* reviews = [currentRestaurant reviews];
+    for (Review* review in [currentRestaurant reviews]) {
         NSLog(@"Review Text: %@", review.text);
     }
     
@@ -89,17 +89,31 @@
     
     
     
-    helpfulReviewLabel.text = [[restaurant mostHelpfulReview] text];
+    helpfulReviewLabel.text = [[currentRestaurant mostHelpfulReview] text];
     
-    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@" %i of %i found this review helpful ", [[restaurant mostHelpfulReview]numberOfHelpfulReviews], [[restaurant mostHelpfulReview]numberOfHelpfulReviews] + [[restaurant mostHelpfulReview ]numberOfUnhelpfulReviews] ];
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@" %i of %i found this review helpful ", [[currentRestaurant mostHelpfulReview]numberOfHelpfulReviews], [[currentRestaurant mostHelpfulReview]numberOfHelpfulReviews] + [[currentRestaurant mostHelpfulReview ]numberOfUnhelpfulReviews] ];
     
     
-    addressLabel.text = [restaurant address];
-    navigationHeader.title = [restaurant name];
-    cuisineLabel.text = [restaurant cuisineType];
-    ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
+    addressLabel.text = [currentRestaurant address];
+    navigationHeader.title = [currentRestaurant name];
+    cuisineLabel.text = [currentRestaurant cuisineType];
+    ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", currentRestaurant.yearOpened, [currentRestaurant age]];
+    
+    float averageScore = [currentRestaurant averageCustomerReview];
+      if (averageScore >=0.5)
+           star1.image = [UIImage imageNamed:@"Star_ON.png"];
+      if (averageScore >=1.5)
+           star2.image = [UIImage imageNamed:@"Star_ON.png"];
+      if (averageScore >=2.5)
+           star3.image = [UIImage imageNamed:@"Star_ON.png"];
+      if (averageScore >=3.5)
+           star4.image = [UIImage imageNamed:@"Star_ON.png"];
+      if (averageScore >=4.5)
+           star5.image = [UIImage imageNamed:@"Star_ON.png"];
+    
     
 }
+
 
 
 

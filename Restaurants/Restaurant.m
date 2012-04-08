@@ -30,7 +30,15 @@
     
 }
 
-
+-(float) averageCustomerReview
+{
+    int starsTotal = 0;
+    for (Review* review in reviews) {
+        starsTotal = starsTotal + review.score;
+    }
+    float starsAverage = (float)starsTotal/ [reviews count];
+    return starsAverage;
+}
 
 
 @end

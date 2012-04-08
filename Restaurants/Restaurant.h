@@ -18,6 +18,9 @@
     
     
     
+    
+    
+    
 }
 @property(readwrite, strong) NSString* address;
 @property(readwrite, strong) NSString* name;
@@ -31,7 +34,10 @@
 @property(readwrite) int numberOfHelpfulRatings;
 @property(readwrite) int numberOfUnhelpfulRatings;
 
+
+
 -(int)age;
 -(Review*)mostHelpfulReview;
+-(float) averageCustomerReview;
 
 @end

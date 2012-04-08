@@ -10,7 +10,7 @@
 
 @interface DetailViewController : UIViewController
 {
-    Restaurant* restaurant;
+    Restaurant* currentRestaurant;
     Review* review;
 }
 
