@@ -9,5 +9,6 @@
 
 @interface MasterViewController : UITableViewController
 
+@property(readwrite, strong) NSMutableArray* restaurants;
 
 @end

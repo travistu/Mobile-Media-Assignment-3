@@ -5,9 +5,10 @@
 //
 
 #import "MasterViewController.h"
+#import "DetailViewController.h" 
 
 @implementation MasterViewController
-
+@synthesize restaurants;
 
 - (void)awakeFromNib
 {
@@ -20,6 +21,18 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    DetailViewController* detailVC = (DetailViewController*)
+    [segue destinationViewController];
+    UITableView* table = [self tableView];
+    NSIndexPath* indexPath = [table indexPathForSelectedRow];
+    Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
+    
+    detailVC.restaurant = currentRestaurant;
+    
+    
+}
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -27,11 +40,20 @@
 	// Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad];
     Restaurant* piopio = [[Restaurant alloc] init];
+    Restaurant* teriyakiboy = [[Restaurant alloc] init];
+
     
     piopio.name = @"Pio Pio";
     piopio.address = @"746 First Avenue\nNew York, NY 10128";
     piopio.cuisineType = @"Peruvian";
     piopio.yearOpened = 1995;
+    
+    teriyakiboy.name = @"Teriyaki Boy";
+    teriyakiboy.address = @"746 First Avenue\nNew York, NY 10128";
+    teriyakiboy.cuisineType = @"Japanese";
+    teriyakiboy.yearOpened = 1995;
+    
+    restaurants = [[NSMutableArray alloc] initWithObjects:piopio, teriyakiboy, nil];
     
     Review* review1 = [[Review alloc] init];
     review1.text = @"What fab-u-lass chicken! We could eat it all day if we didn't have to stop to drink sangria!";
@@ -99,7 +121,7 @@
 -(int)tableView:(UITableView *)tableView numberOfRowsInSection:
 (NSInteger)section
 {
-    return 1; 
+    return 2; 
 }
 
 
@@ -107,8 +129,11 @@
 {
     NSString* cellIdentifier = @"RestaurantCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    cell.textLabel.text = @"Pio Pio";
-    cell.detailTextLabel.text = @"Peruvian";
+    
+    Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = currentRestaurant.name;
+    cell.detailTextLabel.text = currentRestaurant.cuisineType;
     return cell;
 }
   
