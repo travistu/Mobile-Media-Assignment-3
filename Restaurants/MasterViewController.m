@@ -29,7 +29,7 @@
     NSIndexPath* indexPath = [table indexPathForSelectedRow];
     Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
     
-    detailVC.restaurant = currentRestaurant;
+    detailVC.currentRestaurant = currentRestaurant;
     
     
 }
@@ -82,6 +82,9 @@
     review4.score = 4;
     review4.numberOfHelpfulReviews = 14;
     review4.numberOfUnhelpfulReviews = 5;
+    
+    piopio.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3, review4, nil]; 
+    
 }
 
 - (void)viewDidUnload

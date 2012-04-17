@@ -7,7 +7,7 @@
 #import "DetailViewController.h"
 
 @implementation DetailViewController
-@synthesize restaurant;
+@synthesize currentRestaurant;
 @synthesize addressLabel;
 @synthesize navigationHeader;
 @synthesize cuisineLabel;
@@ -25,48 +25,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    currentRestaurant = [[Restaurant alloc] init];
-    
-    currentRestaurant.name = @"Pio Pio";
-    currentRestaurant.address = @"746 First Avenue\nNew York, NY 10128";
-    currentRestaurant.cuisineType = @"Peruvian";
-    currentRestaurant.yearOpened = 1995;
-    
-    Review* review1 = [[Review alloc] init];
-    review1.text = @"What fab-u-lass chicken! We could eat it all day if we didn't have to stop to drink sangria!";
-    review1.reviewer = @"The Addams";
-    review1.score = 5;
-    review1.numberOfHelpfulReviews = 19;
-    review1.numberOfUnhelpfulReviews = 8;
-    
-    Review* review2 = [[Review alloc] init];
-    review2.text = @"I DONE POSTED ON DA INTARWEBS!";
-    review2.reviewer = @"Anonymous";
-    review2.score = 1;
-    review2.numberOfHelpfulReviews = 0;
-    review2.numberOfUnhelpfulReviews = 45;
-    
-    Review* review3 = [[Review alloc] init];
-    review3.text = @"Some of the best chicken I've ever eaten. A helpful tip: get some green (Aji) sauce to go, they sell it by the pint!";
-    review3.reviewer = @"Jim Carr";
-    review3.score = 5;
-    review3.numberOfHelpfulReviews = 28;
-    review3.numberOfUnhelpfulReviews = 2;
-    
-    Review* review4 = [[Review alloc] init];
-    review4.text = @"While the food is amazing, they often simply don't pick up the phone when ordering out!";
-    review4.reviewer = @"Paul";
-    review4.score = 4;
-    review4.numberOfHelpfulReviews = 14;
-    review4.numberOfUnhelpfulReviews = 5;
-    
-    
-    currentRestaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
-    
-    
 
-    helpfulReviewLabel.text = [NSString stringWithFormat:@" %@-%@ ",review1.text, review1.reviewer];
-    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@" %i of %i found this review helpful ", review1.numberOfHelpfulReviews, review1.numberOfHelpfulReviews + review1.numberOfUnhelpfulReviews];
     
     
     

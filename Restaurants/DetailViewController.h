@@ -14,7 +14,7 @@
     Review* review;
 }
 
-@property(readwrite, strong) Restaurant* restaurant;
+@property(readwrite, strong) Restaurant* currentRestaurant;
 
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationHeader;
