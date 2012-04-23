@@ -21,6 +21,7 @@
 		0EE5A6EA14BEB491006BB5E1 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5A6E914BEB491006BB5E1 /* MasterViewController.m */; };
 		0EE5A6ED14BEB491006BB5E1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5A6EC14BEB491006BB5E1 /* DetailViewController.m */; };
 		7B7A881B1504C432002CEFC8 /* Review.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7A881A1504C432002CEFC8 /* Review.m */; };
+		7B896624154542E600F07F39 /* ReviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B896623154542E600F07F39 /* ReviewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		0EE5A6EC14BEB491006BB5E1 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = DetailViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		7B7A88191504C432002CEFC8 /* Review.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Review.h; sourceTree = "<group>"; };
 		7B7A881A1504C432002CEFC8 /* Review.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Review.m; sourceTree = "<group>"; };
+		7B896622154542E600F07F39 /* ReviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewViewController.h; sourceTree = "<group>"; };
+		7B896623154542E600F07F39 /* ReviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				0E6F215314F9FDFC004F682D /* Images */,
 				0E02F6BB14CD10E300C3EAE8 /* Restaurant.h */,
 				0E02F6BC14CD10E300C3EAE8 /* Restaurant.m */,
+				7B896622154542E600F07F39 /* ReviewViewController.h */,
+				7B896623154542E600F07F39 /* ReviewViewController.m */,
 				7B7A88191504C432002CEFC8 /* Review.h */,
 				7B7A881A1504C432002CEFC8 /* Review.m */,
 				0EE5A6E214BEB490006BB5E1 /* AppDelegate.h */,
@@ -203,6 +208,7 @@
 				0E02F6BD14CD10E300C3EAE8 /* Restaurant.m in Sources */,
 				0E2AFF8614DE3F3600456523 /* Mug.m in Sources */,
 				7B7A881B1504C432002CEFC8 /* Review.m in Sources */,
+				7B896624154542E600F07F39 /* ReviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
