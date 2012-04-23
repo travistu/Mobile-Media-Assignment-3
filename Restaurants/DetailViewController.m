@@ -31,7 +31,7 @@
     
     NSArray* reviews = [currentRestaurant reviews];
     for (Review* review in [currentRestaurant reviews]) {
-        NSLog(@"Review Text: %@", review.text);
+        
     }
     
     if (review.score > 4)
@@ -72,6 +72,13 @@
            star5.image = [UIImage imageNamed:@"Star_ON.png"];
     
     
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id) sender
+{
+    ReviewViewController* reviewVC = (ReviewViewController*) [segue destinationViewController];
+    reviewVC.restaurant = currentRestaurant;
 }
 
 
